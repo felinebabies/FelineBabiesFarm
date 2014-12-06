@@ -6,6 +6,7 @@ gem 'rails', '4.1.4'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
