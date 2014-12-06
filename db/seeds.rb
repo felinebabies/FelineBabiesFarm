@@ -7,14 +7,17 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #初期roleの追加
-Role.create(:name => 'superadmin')
-Role.create(:name => 'admin')
+Role.first_or_create([
+  {:id => 1, :name => 'superadmin'},
+  {:id => 2, :name => 'admin'}
+])
 
 #管理ユーザの追加
-adminUser = User.new(:email => ENV['ADMIN_EMAIL'] , :password => ENV['ADMIN_PASSWORD'])
+adminUser = User.first_or_create([
+  {:id => 1, :email => ENV['ADMIN_EMAIL'] , :password => ENV['ADMIN_PASSWORD']}
+])
 
 #管理ユーザへの管理者権限付与
 adminUser.roles << Role.where(:name => 'superadmin')
-adminUser.roles << Role.where(:name => 'admin')
-
+#adminUser.roles << Role.where(:name => 'admin')
 adminUser.save
