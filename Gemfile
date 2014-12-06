@@ -13,6 +13,11 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
+#consoleをpryに変更
+group :development do
+  gem 'pry-rails'
+end
+
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
