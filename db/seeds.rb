@@ -19,5 +19,5 @@ adminUser = User.first_or_create([
 
 #管理ユーザへの管理者権限付与
 adminUser.roles << Role.where(:name => 'superadmin')
-#adminUser.roles << Role.where(:name => 'admin')
+adminUser.roles << Role.where(:name => 'admin')
 adminUser.save
