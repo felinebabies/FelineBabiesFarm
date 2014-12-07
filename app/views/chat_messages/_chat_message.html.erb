@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chat_messages.each do |chat_message| %>
+      <tr>
+        <td><%= chat_message.user_id %></td>
+        <td><%= chat_message.message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

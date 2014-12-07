@@ -1,0 +1,8 @@
+<%= form_tag({ controller: 'chat_messages', action: 'create' }, { remote: true }) do %>
+<div>
+  <%= text_area_tag :message %>
+</div>
+<div>
+  <%= submit_tag '送信' %>
+</div>
+<% end %>
