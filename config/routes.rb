@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get '/' => 'chat_messages#index'
+
   get 'chat_messages' => 'chat_messages#index'
   get 'chat_messages/index'
   post 'chat_messages/create'
+  get 'chat_messages/update'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

@@ -15,6 +15,10 @@ class ChatMessagesController < ApplicationController
     @chat_message.user_id = current_user.id
     @chat_message.save
   end
+  
+  def update
+    @chat_messages = get_recent_messages
+  end
 
   private
     def chat_message_params
